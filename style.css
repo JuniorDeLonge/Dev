@@ -1,27 +1,60 @@
 @import url("https://fonts.googleapis.com/css2?family=Mukta:wght@200;400;500;700&display=swap");
 
-body {
+:root {
+    --verde-color: #c7f55a;
+    --laranja-color: #ff1810;
+    --preto-color: #070707;
+    --cinza-color: #585555;
+
+}
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background: rgb(255, 24, 16);
+    text-decoration: none;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: var(--laranja-color);
     font-family: "Mukta", sans-serif;
+    width: 100%;
+    max-width: 100%;
 }
 
 .header {
-    overflow: hidden;
-    padding: 20px 10px;
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 14px;
 }
 
 .header a {
-    float: left;
-    color: #070707;
-    text-align: center;
-    padding: 12px;
+    color: var(--preto-color);
     text-decoration: none;
-    font-size: 1.1rem;
-    line-height: 25px;
-    border-radius: 4px;
+    font-size: 1.5rem;
+    border-radius: 3px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    padding: 10px;
+}
+
+.logo {
+    color: var(--preto-color);
+    text-decoration: none;
+    font-size: 1.5rem;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    padding: 5px;
 }
 
 h1 {
@@ -34,38 +67,65 @@ h1 {
     padding: 12px;
 }
 
-.pp {
+p {
     text-align: center;
-    justify-content: center;
-    font-size: 6rem;
+    justify-content: flex-start;
+    font-size: 2rem;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    padding: 10px;
+    padding: 12px;
 }
 
 .header a.logo {
-    font-size: 4rem;
+    font-size: 6rem;
     font-weight: bold;
+    background-color: var(--verde-color);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
 }
 
 .header a:hover {
-    background-color: rgb(255, 67, 60);
-    color: #070707;
+    color: var(--preto-color);
+    background-color: var(--verde-color);
+}
+
+.header a.logo:hover {
+    color: var(--laranja-color);
+    background-color: var(--verde-color);
 }
 
 .header a.active {
-    background-color: rgb(255, 67, 60);
-    color: #070707;
+    color: var(--preto-color);
 }
 
 .header-right {
-    float: right;
+    display: flex;
+    padding: 16px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 7px;
+    align-content: space-around;
+    background-color: var(--preto-color);
 }
 
-.footer {
-    background: #070707;
-    color: #3fff79;
+.header-right a {
+    color: var(--verde-color);
+}
+
+.header-right a:hover {
+    color: var(--laranja-color);
+}
+
+.footer,
+.copyright p {
+    background-color: var(--preto-color);
+    color: var(--cinza-color);
     font-size: 1rem;
     display: flex;
     justify-items: center;
@@ -83,22 +143,24 @@ h1 {
 
 /* Works on Chrome, Edge, and Safari */
 *::-webkit-scrollbar {
-    width: 10px;
+    width: 7px;
 }
+
 /* BG */
 *::-webkit-scrollbar-track {
-    background: rgb(255, 24, 16);
+    background: var(--verde-color);
 }
+
 /* Thumb */
 *::-webkit-scrollbar-thumb {
-    background-color: #070707;
-    border-radius: 10px;
-    border: 4px solid #070707;
+    background-color: var(--preto-color);
+    border-radius: 7px;
+    border: 2px solid var(--preto-color);
 }
 
 /* Fim do Scrollbar Colorido - @juniordelonge */
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 790px) {
     .header a {
         float: none;
         display: block;
@@ -110,11 +172,11 @@ h1 {
     }
 
     h1,
-    .pp {
-        font-size: 3rem;
+    p {
+        font-size: 1rem;
     }
 
     .header a.logo {
-        font-size: 2rem;
+        font-size: 3rem;
     }
 }
